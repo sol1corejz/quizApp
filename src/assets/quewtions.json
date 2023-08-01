@@ -1,0 +1,82 @@
+{
+  "question1": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question2": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question3": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question4": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question5": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question6": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question7": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question8": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question9": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question10": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question11": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question12": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question13": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question14": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question15": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question16": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question17": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question18": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question19": {
+    "text": "Yes/No",
+    "answered": false
+  },
+  "question20": {
+    "text": "Yes/No",
+    "answered": false
+  }
+}
