@@ -1,5 +1,17 @@
 <script setup>
+  import QuestionItem from "@/components/QuestionsPage/QuestionItem.vue";
 
+  const props = defineProps({
+    data: Array
+  })
+
+  console.log(props.data)
+
+  function toggleQuestion (index) {
+    console.log(props.data[index])
+    //props.data[index].answered = !props.data[index].answered;
+    //console.log(index, props.data[index].answered)
+  }
 </script>
 
 <template>
@@ -14,6 +26,9 @@
       <div class="title__text">Tests</div>
       <div class="title__underline"></div>
     </div>
+    <div class="main_block">
+      <QuestionItem v-for="(num, index) in data" @click="toggleQuestion(num)"  :num="index + 1" :isAnswered="true"/>
+    </div>
   </div>
 </template>
 
@@ -26,6 +41,7 @@
   margin-left: 16px;
 }
 .header__btn {
+  cursor: pointer;
   margin-right: 16px;
 }
 .header__text {
@@ -49,5 +65,8 @@
   width: 109px;
   border-top: 2px solid #FF7355;
   margin: 0 auto;
+}
+.main_block{
+  margin-left: 16px;
 }
 </style>

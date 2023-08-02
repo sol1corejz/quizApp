@@ -32,10 +32,10 @@ function setActive(id) {
 <template>
 
   <div class="container">
-    <QuestionsPage/>
+    <QuestionsPage :data="data"/>
     <Header/>
     <div class="info_block">
-      <div class="info_block__top">
+      <div @click="() => this.$router.push('/questions')" class="info_block__top">
         <div class="info_block__img">
           <img src="./assets/icons/graduation-cap.png" alt="cap" width="32">
         </div>
@@ -110,6 +110,7 @@ p{
   margin-left: 16px;
 }
 .info_block__top{
+  cursor: pointer;
   display: flex;
   margin-bottom: 16px;
   padding-top: 24px;
