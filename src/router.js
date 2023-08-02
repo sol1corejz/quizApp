@@ -1,12 +1,13 @@
-import App from "@/App.vue";
+import {createRouter, createWebHashHistory} from "vue-router"
 import QuestionsPage from "@/components/QuestionsPage/QuestionsPage.vue";
+import MainPage from "@/components/MainPage/MainPage.vue";
 
 const routes = [
-    { path: '/', component: App },
-    { path: '/questions', component: QuestionsPage },
+    { name: 'main', path: '/main', component: MainPage, alias: '/' },
+    { name: 'questions', path: '/questions', component: QuestionsPage },
 ]
 
-export const router = VueRouter.createRouter({
-    history: VueRouter.createWebHashHistory(),
+export const router = createRouter({
+    history: createWebHashHistory(),
     routes,
 })

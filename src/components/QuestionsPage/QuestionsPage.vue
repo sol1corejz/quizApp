@@ -1,25 +1,25 @@
 <script setup>
   import QuestionItem from "@/components/QuestionsPage/QuestionItem.vue";
+  import {ref} from "vue";
 
-  const props = defineProps({
-    data: Array
-  })
+  let data = ref(localStorage.getItem('data'));
+  data.value = JSON.parse(data.value);
 
-  console.log(props.data)
 
   function toggleQuestion (index) {
-    console.log(props.data[index])
-    //props.data[index].answered = !props.data[index].answered;
-    //console.log(index, props.data[index].answered)
+    data.value[index].answered = !data.value[index].answered;
+    localStorage.setItem('data', JSON.stringify(data.value))
+    data.value = localStorage.getItem('data');
+    data.value = JSON.parse(data.value);
   }
 </script>
 
 <template>
   <div class="container">
     <header class="header">
-      <div class="header__btn">
+      <router-link class="header__btn" to="/main">
         <img src="../../assets/icons/arrow-left.png" alt="backIcon" width="24">
-      </div>
+      </router-link>
       <div class="header__text">Learning</div>
     </header>
     <div class="title">
@@ -27,16 +27,14 @@
       <div class="title__underline"></div>
     </div>
     <div class="main_block">
-      <QuestionItem v-for="(num, index) in data" @click="toggleQuestion(num)"  :num="index + 1" :isAnswered="true"/>
+      <QuestionItem v-for="(q, index) in data" @toggle="(id) => toggleQuestion(id)" :key="index" :num="index" :isAnswered="q.answered"/>
     </div>
   </div>
 </template>
 
 <style scoped>
 .header {
-  padding-top: 15px;
   padding-bottom: 15px;
-  margin-top: 48px;
   display: flex;
   margin-left: 16px;
 }

@@ -1,16 +1,28 @@
 <script setup>
+  import {computed} from "vue";
+
+  const props = defineProps({
+    data: Array
+  })
+
+  const bars = computed(() => props.data.length / 7);
+
+  const intPart = computed(() => Math.trunc(props.data.filter(q => q.answered).length / bars.value));
+  const floatPart = computed(() => props.data.filter(q => q.answered).length % bars.value);
+
 
 </script>
 
 <template>
   <div class="progress-bar">
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
-    <span class="progress-bar__item"></span>
+    <progress  max="100" :value="progress"></progress>
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
+<!--    <span class="progress-bar__item"></span>-->
   </div>
 </template>
 

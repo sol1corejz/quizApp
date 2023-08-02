@@ -1,14 +1,16 @@
 <script setup>
   const props = defineProps({
     num: Number,
-    isAnswered: Object
+    isAnswered: Boolean
   })
+
+  const emit = defineEmits(['toggle'])
 </script>
 
 <template>
-  <div class="question__item">
+  <div class="question__item" @click="emit('toggle', num)">
     <img v-if="isAnswered" class="question__img" src="../../assets/icons/check-circle.png" alt="checkIcon" width="24">
-    {{props.num}}
+    {{props.num + 1}}
   </div>
 </template>
 

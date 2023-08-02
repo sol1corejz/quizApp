@@ -5,10 +5,10 @@
 <template>
   <header class="header">
     <p class="header__text">ray driving theory</p>
-    <span class="header_btns">
+    <div class="header_btns">
         <div class="header__btn"><img src="../assets/icons/crown.png" alt="crown" width="24"></div>
         <div class="header__btn"><img style="margin-right: 4px" src="../assets/icons/fire.png" alt="fire" width="24"><p class="header_btn__text">13</p></div>
-      </span>
+    </div>
   </header>
 </template>
 
