@@ -3,9 +3,9 @@ import questions from "@/assets/questions.json";
 
 const data = Object.values(questions);
 
-const storageData = localStorage.getItem('data');
+const storageData = sessionStorage.getItem('data');
 if(storageData === undefined || storageData === null) {
-  localStorage.setItem('data', JSON.stringify(data));
+  sessionStorage.setItem('data', JSON.stringify(data));
 }
 
 </script>

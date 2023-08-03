@@ -2,14 +2,14 @@
   import QuestionItem from "@/components/QuestionsPage/QuestionItem.vue";
   import {ref} from "vue";
 
-  let data = ref(localStorage.getItem('data'));
+  let data = ref(sessionStorage.getItem('data'));
   data.value = JSON.parse(data.value);
 
 
   function toggleQuestion (index) {
     data.value[index].answered = !data.value[index].answered;
-    localStorage.setItem('data', JSON.stringify(data.value))
-    data.value = localStorage.getItem('data');
+    sessionStorage.setItem('data', JSON.stringify(data.value))
+    data.value = sessionStorage.getItem('data');
     data.value = JSON.parse(data.value);
   }
 </script>

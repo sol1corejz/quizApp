@@ -17,7 +17,7 @@ import MainHeader from "@/components/MainHeader.vue";
 
 const active = ref( '0');
 
-let data = localStorage.getItem('data');
+let data = sessionStorage.getItem('data');
 data = JSON.parse(data);
 
 function setActive(id) {
